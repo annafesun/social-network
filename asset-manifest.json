@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/github.io/social-network/static/css/main.984ca79c.chunk.css",
+    "main.js": "/github.io/social-network/static/js/main.0f21475c.chunk.js",
+    "main.js.map": "/github.io/social-network/static/js/main.0f21475c.chunk.js.map",
+    "runtime-main.js": "/github.io/social-network/static/js/runtime-main.e4ce50de.js",
+    "runtime-main.js.map": "/github.io/social-network/static/js/runtime-main.e4ce50de.js.map",
+    "static/js/2.d260dc21.chunk.js": "/github.io/social-network/static/js/2.d260dc21.chunk.js",
+    "static/js/2.d260dc21.chunk.js.map": "/github.io/social-network/static/js/2.d260dc21.chunk.js.map",
+    "static/css/3.d1226fd2.chunk.css": "/github.io/social-network/static/css/3.d1226fd2.chunk.css",
+    "static/js/3.fa09a49f.chunk.js": "/github.io/social-network/static/js/3.fa09a49f.chunk.js",
+    "static/js/3.fa09a49f.chunk.js.map": "/github.io/social-network/static/js/3.fa09a49f.chunk.js.map",
+    "index.html": "/github.io/social-network/index.html",
+    "static/css/3.d1226fd2.chunk.css.map": "/github.io/social-network/static/css/3.d1226fd2.chunk.css.map",
+    "static/css/main.984ca79c.chunk.css.map": "/github.io/social-network/static/css/main.984ca79c.chunk.css.map",
+    "static/js/2.d260dc21.chunk.js.LICENSE.txt": "/github.io/social-network/static/js/2.d260dc21.chunk.js.LICENSE.txt",
+    "static/media/arrowRight1.f8bf65ad.png": "/github.io/social-network/static/media/arrowRight1.f8bf65ad.png",
+    "static/media/avatarGirls.a634a2f6.png": "/github.io/social-network/static/media/avatarGirls.a634a2f6.png",
+    "static/media/logo.63848436.jpg": "/github.io/social-network/static/media/logo.63848436.jpg",
+    "static/media/preloader.dd8bff37.svg": "/github.io/social-network/static/media/preloader.dd8bff37.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e4ce50de.js",
+    "static/js/2.d260dc21.chunk.js",
+    "static/css/main.984ca79c.chunk.css",
+    "static/js/main.0f21475c.chunk.js"
+  ]
+}
