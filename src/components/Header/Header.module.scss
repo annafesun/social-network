@@ -1,0 +1,23 @@
+.header {
+    grid-area: h;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7906bf;
+    padding: 10px;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.loginBlock {
+    
+}
+
+.loginBlock a {
+    color: white;
+}
