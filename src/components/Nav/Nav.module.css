@@ -1,6 +1,6 @@
-.nav{
+.nav {
     grid-area: n;
-    background-color: chocolate;
+    background-color: #985ad5;
     padding: 20px;
 }
 
@@ -10,6 +10,6 @@
 }
 
 
-.item a.active  {
+.item a.active {
     color: darkgreen;
 }

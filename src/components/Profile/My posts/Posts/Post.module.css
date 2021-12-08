@@ -1,9 +1,25 @@
+.item{
+    border: 3px solid #030353;
+    background-color: #989ba3;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
 .item a{
-    color: darkblue;
+    color: #030353;
+    text-decoration: none;
+    font-family: cursive;
 }
 
 .item img{
     width: 50px;
     height: 50px;
     border-radius: 30px;
+    padding: 5px  10px 5px 0;
+}
+
+.like{
+    font-size: 12px;
+    font-family: cursive;
+    letter-spacing: 2px;
 }

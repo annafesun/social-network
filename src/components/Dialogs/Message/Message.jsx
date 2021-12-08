@@ -1,19 +1,18 @@
-import React, {createRef} from "react";
-import styles from './../Dialogs.module.css';
+import React  from 'react'
+import styles from './../Dialogs.module.css'
 
+const Message = ({ message, friend}) => {
+  const color = friend ? 'purple' : 'blue'
 
-const Message = (props) => {
-
-  // let newPostElement = React.createRef()
-  //
-  // let addPost = () => {
-  //   let text = newPostElement.current.value;
-  //   alert(text);
-  // }
   return (
-      <div className={styles.message}>{props.message}</div>
-)
+    <div
+      className={styles.message}
+      style={{
+        color: color,
+        textAlign: `${friend && 'right'}`
+      }}
+    >{message}</div>
+  )
 }
 
-
-export default Message;
+export default Message

@@ -1,0 +1,7 @@
+.Profile{
+    padding: 10px;
+    box-shadow: 4px 4px 10px #444 inset;
+    display: flex;
+    flex-direction: column;
+    background-color: #7f8397;
+}

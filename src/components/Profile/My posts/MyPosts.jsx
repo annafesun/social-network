@@ -1,38 +1,48 @@
-import React, { useRef } from 'react'
+import React  from 'react'
 import styles from './MyPosts.module.css'
 import Post from './Posts'
-import { addPostActionCreator, updateNewPostActionCreator } from '../../redux/state'
+import { Field, reduxForm, change, reset } from 'redux-form'
+import { maxLenghtCreator, required } from '../../utilits/Validators/validators'
+import { Textarea } from '../../Common/FormControls'
+import { useDispatch } from 'react-redux'
 
+const MyPosts = ({ addPost, postData }) => {
+  const dispatch = useDispatch()
 
-const MyPosts = ({ dispatch, newPostText, postData }) => {
-  let newPostElement = useRef()
-
-  let addPost = () => dispatch(addPostActionCreator())
-
-  let onPostChange = () => {
-    let text = newPostElement.current.value
-    dispatch(updateNewPostActionCreator(text))
+  let onAddPost = (values) => {
+    addPost(values.newPostText)
+    dispatch(change('profileAddNewPostForm', 'newPostText', '', false))
+    dispatch(reset('profileAddNewPostForm'))
   }
 
   return (
-      <div className={styles.name}>
-        My posts
-        <div>
-          <textarea
-              onChange={onPostChange}
-              ref={newPostElement}
-              value={newPostText}
-          />
-          <div>
-            <button onClick={addPost}> Add post</button>
-            <button className={styles.button}>Remove post</button>
-          </div>
-        </div>
+      <div>
+        <p className={styles.name}>My posts</p>
+        <AddNewPostFormRedux onSubmit={onAddPost}/>
         <div className={styles.posts}>
-          {postData.map(p => <Post message={p.post} id={p.id} like={p.like} />)}
+          {postData.map(p => <Post key={p.id} message={p.post} id={p.id} like={p.like} />)}
         </div>
       </div>
   )
 }
+
+const maxLenght10 = maxLenghtCreator(10)
+
+const AddNewPostForm = ({ handleSubmit }) => {
+   return(
+       <form onSubmit={handleSubmit} className={styles.formAddPost}>
+          <Field
+              name={'newPostText'}
+              component={Textarea}
+              validate={[required, maxLenght10]}
+          />
+         <div>
+           <button className={styles.btnAddPost}>Add post</button>
+         </div>
+       </form>
+   )
+}
+
+const AddNewPostFormRedux = reduxForm({form:'profileAddNewPostForm'})(AddNewPostForm)
 
 export default MyPosts

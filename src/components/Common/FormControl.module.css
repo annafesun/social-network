@@ -1,0 +1,67 @@
+.formControls.error input,
+.formControls.error textarea {
+    border: solid red 3px;
+}
+
+.formControls.error span {
+    text-shadow: 1px 1px 0 red;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.formSummaryError {
+    border: red 1px solid;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    padding: 5px;
+    color: darkred;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    background: linear-gradient(to bottom, #020024, #fae6f6);
+}
+
+.loginForm form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.loginForm h1{
+    font-size: 100px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #bc13fe,
+            0 0 82px #bc13fe,
+            0 0 92px #bc13fe,
+            0 0 102px #bc13fe,
+            0 0 151px #bc13fe;
+}
+
+.loginForm ul{
+    padding-bottom: 20px;
+    list-style-type: none;
+}
+
+.inputLoginForm{
+    padding: 10px 100px 10px 5px ;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow:  3px 3px 5px black;
+}
+
+.rememberMe{
+    display: flex;
+    padding: 5px 0px 10px 0px;
+
+}

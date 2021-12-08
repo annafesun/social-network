@@ -1,23 +1,23 @@
 .header {
-    grid-area: h;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #7906bf;
-    padding: 10px;
+  grid-area: h;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f0545;
+  padding: 20px;
+  color: #fff;
 }
 
 .header img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50px;
+
 }
 
 .loginBlock {
-    
-}
-
-.loginBlock a {
+  a {
     color: white;
+  }
 }

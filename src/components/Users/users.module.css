@@ -1,0 +1,55 @@
+.usersPage{
+    background-color: #D4E6F1;
+}
+
+.userPhoto{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.selectedPage{
+    font-weight: bold;
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.usersPage span{
+    padding: 0 3px;
+    box-shadow: 0 2px 0 #555;
+    background-color: #020110;
+    color: #cff6f3;
+    padding: 4px 10px;
+    border: 3px solid #032680;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.users{
+    padding: 15px 0 5px 20px;
+}
+
+.btnUsers{
+    position: relative;
+    top: 6px;
+    left: 1%;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 #555;
+    background-color: #020110;
+    color: #cff6f3;
+    padding: 4px 10px;
+    border: 3px solid #032680;
+    cursor: pointer;
+    /*margin-top: 5px;*/
+}
+
+.arrowUser{
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    padding: 4px 10px;
+}

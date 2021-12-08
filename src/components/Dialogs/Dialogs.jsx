@@ -1,70 +1,66 @@
 import React from 'react'
 import styles from './Dialogs.module.css'
-import { NavLink } from 'react-router-dom'
-import store, { sendMessageCreator, updateNewMessageCreator } from '../redux/state'
+import DialogItem from './DialogItem/DialogItem'
+import Message from './Message/Message'
+import { Field, reduxForm } from 'redux-form'
+import { Textarea } from '../Common/FormControls'
+import { maxLenghtCreator, required } from '../utilits/Validators/validators'
+import Button from '../shared/Button/Button'
 
+const maxLength50 = maxLenghtCreator(50)
 
-const DialogItem = (props) => {
-  let path = '/dialogs/' + props.id
+const Dialogs = ({ dialogsPage, sendMessage, messageId }) => {
+  const {
+    dialogs,
+    messages,
+  } = dialogsPage
 
-  return (
-      <div className={styles.dialog + ' ' + styles.active}>
-        <NavLink to='path'>{props.name}</NavLink>
-      </div>
-  )
-}
-
-const Message = (props) => {
-  return (
-      <div className={styles.message}>{props.message}</div>
-  )
-}
-
-const Dialogs = (props) => {
-
-  let state = props.store.getState().dialogsPage
-
-  let dialogsElements = state.dialogs.map((d) =>
-      <DialogItem name={d.name} id={d.id} />
-  )
-
-  let messagesElements = state.messages.map((m) =>
-      <Message message={m.message} id={m.id} />
-  )
-
-  let newMessageBody = state.newMessageBody
-
-  let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator())
-  }
-
-  let onChangeMessage = (e) => {
-    let body = e.target.value
-    props.store.dispatch(updateNewMessageCreator(body))
+  const addNewMessage = (values) => {
+    sendMessage(messageId, values.newMessageBody)
   }
 
   return (
       <div className={styles.dialogsItem}>
         <div className={styles.dialogs}>
-          {dialogsElements}
+          {dialogs.map((d) =>
+              <DialogItem key={d.id} name={d.name} id={d.id} />
+          )}
         </div>
         <div className={styles.messages}>
-          {messagesElements}
+          {messageId && messages
+              .filter(m => m.id === messageId)
+              .map(({ messages }) => messages.map(message => (
+                      <Message
+                          key={message.id}
+                          message={message.message}
+                          id={message.id}
+                          friend={message.type === 'from'}
+                      />
+                  ))
+              )
+          }
         </div>
         <div>
-          <div>
-          <textarea>
-              placeholder='Enter your Message'
-              value={newMessageBody}
-              onChange={onChangeMessage}
-          </textarea>
-        </div>
-        <div>
-          <button onClick={onSendMessageClick}>Send</button>
-        </div>
+          <AddMessageFormRedux onSubmit={addNewMessage} />
         </div>
       </div>
   )
 }
+
+const AddMessageForm = ({ handleSubmit }) => {
+  return (
+      <form onSubmit={handleSubmit}>
+        <Field
+            component={Textarea}
+            validate={[required, maxLength50]}
+            placeholder='Enter your Message'
+            name={'newMessageBody'}
+        />
+        <Button text={'SEND'} type={'submit'}/>
+      </form>
+  )
+}
+
+const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
 
 export default Dialogs

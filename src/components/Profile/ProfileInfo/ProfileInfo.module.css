@@ -1,3 +1,44 @@
-.profileBlock{
-    margin: 10px;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contacts{
+    padding-left: 15px;
+}
+
+.fullNameUsers {
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 30px;
+}
+
+.imageUsers {
+    border-radius: 0px;
+    width:100px ;
+    height:110px;
+    margin: 15px 10px;
+    box-shadow: 0 2px 0 #555;
+    border: 3px solid #310226;
+}
+
+.ProfileInfo{
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #666;
+}
+
+.edit{
+    padding: 0 3px;
+    box-shadow: 0 2px 0 #555;
+    background-color: #020110;
+    color: #cff6f3;
+    padding: 4px 60px;
+    border: 3px solid #032680;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.fileForAvatar{
+    display: flex;
+    margin-bottom: 5px;
 }

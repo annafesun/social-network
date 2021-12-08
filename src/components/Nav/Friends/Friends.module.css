@@ -1,9 +1,14 @@
-.title{
+.title {
     color: darkred;
     font-weight: bold;
     font-size: 30px;
     text-align: center;
     margin-top: 90px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
 }
 
 .item img {

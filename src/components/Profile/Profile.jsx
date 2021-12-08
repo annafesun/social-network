@@ -1,20 +1,20 @@
 import React from 'react'
-import MyPosts from './My posts'
 import ProfileInfo from './ProfileInfo'
+import MyPostsContainer from './My posts/MyPostsContainer'
+import styles from './Profile.module.css'
 
-const Profile = ({ profilePage: { newPostText, postData }, dispatch }) => {
-
+const Profile = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
   return (
-      <>
-        <div>
-          <ProfileInfo />
-        </div>
-        <MyPosts
-            postData={postData}
-            newPostText={newPostText}
-            dispatch={dispatch}
-        />
-      </>
+      <div className={styles.Profile}>
+        <ProfileInfo
+            profile={profile}
+            status={status}
+            updateStatus={updateStatus}
+            isOwner={isOwner}
+            saveProfile={saveProfile}
+            savePhoto={savePhoto}/>
+        <MyPostsContainer />
+      </div>
   )
 }
 
